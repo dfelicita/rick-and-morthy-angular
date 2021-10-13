@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card" [routerLink]="['/','character-list']">
+                <img src="../assets/images/Characters.jpg" class="card-img-top" alt="characters">
+                <div class="card-body">
+                    <h2 class="card-title">Characters List</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4" [routerLink]="['/','location-list']">
+            <div class="card">
+                <img src="../../assets/images/locations.png" class="card-img-top" alt="characters">
+                <div class="card-body">
+                    <h2 class="card-title">Locations List</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" [routerLink]="['/','episode-list']">
+                <img src="../../assets/images/episodes.png" class="card-img-top" alt="characters">
+                <div class="card-body">
+                    <h2 class="card-title">Episodes List</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
