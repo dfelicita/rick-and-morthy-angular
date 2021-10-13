@@ -1,3 +1,7 @@
+div.posRel {
+    position: relative;
+}
+
 h2 {
     color: #CCCCCC;
 }
@@ -7,4 +11,9 @@ div.col-sm-4 {
         cursor: pointer;
         margin: 15px 0;
     }
+}
+
+div.card:hover {
+    transform: scale(1.1);
+    transition-duration: 300ms;
 }

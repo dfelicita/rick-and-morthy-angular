@@ -1,3 +1,20 @@
+div.posRel {
+    position: relative;
+}
+
 h2 {
     color: #CCCCCC;
+}
+
+.special-card {
+    background: #FFFFFF;
+    border: 1px solid #EBEBEB;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+.full-width {
+    width: 100%;
+    border-radius: 10px;
 }

@@ -1,3 +1,18 @@
-<div class="container mt-5">
+<div class="container mt-5 posRel">
     <h2>{{charDetail?.name}}</h2>
+    <div class="row special-card">
+        <div class="col-sm-6">
+            <img src="{{charDetail?.image}}" alt="Character Photo" class="full-width" />
+        </div>
+        <div class="col-sm-6">
+            <p><b>Species: </b>{{charDetail?.species}}</p>
+            <p *ngIf="charDetail?.type != ''"><b>Type: </b>{{charDetail?.type}}</p>
+            <p><b>Gender: </b>{{charDetail?.gender}}</p>
+            <p><b>Origin: </b>{{charDetail?.origin?.name}}</p>
+            <p><b>Location: </b>{{charDetail?.location?.name}}</p>
+            <p><b>Status: </b>{{charDetail?.status}}</p>
+            <p><b>Appears on: </b>{{charDetail?.episode?.length}} episde(s)</p>
+            <button type="button" class="btn btn-dark" [routerLink]="['/','character-list']">Back to list</button>
+        </div>
+    </div>
 </div>

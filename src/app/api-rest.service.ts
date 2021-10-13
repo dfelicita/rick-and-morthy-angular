@@ -9,7 +9,11 @@ export class ApiRestService {
   constructor(private http: HttpClient) { }
 
   public getCharacterList(url?:string) {
-    return this.http.get<getList>('https://rickandmortyapi.com/api/character');
+    if(url){
+      return this.http.get<getList>(url);
+    }else{
+      return this.http.get<getList>('https://rickandmortyapi.com/api/character');
+    }
   }
 
   public getCharacterDetail(id:number) {

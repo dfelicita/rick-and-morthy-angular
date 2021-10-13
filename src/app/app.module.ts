@@ -14,6 +14,7 @@ import { EpisodeDetailComponent } from './episode-detail/episode-detail.componen
 import { HomeComponent } from './home/home.component';
 import { ApiRestService } from './api-rest.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule,
   ],
   providers: [ApiRestService, HttpClient],
   bootstrap: [AppComponent]
