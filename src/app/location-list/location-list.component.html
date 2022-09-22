@@ -1,6 +1,17 @@
-<div class="container mt-5">
-    <div class="row">
-        <h2>List of Locations</h2>
-
+<div class="container mt-5 posRel">
+    <h2 class="container mb-5">List of Locations</h2>
+    <div class="row" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+        <div class="col-sm-4" *ngFor="let location of locationList">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{location.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{location.dimension}}</h6>
+                    <p class="card-text">
+                        Type: {{location.type}} <br>
+                        Known residents: {{location.residents.length}}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -10,8 +10,6 @@ import { CharacterListComponent } from './character-list/character-list.componen
 import { LocationListComponent } from './location-list/location-list.component';
 import { EpisodeListComponent } from './episode-list/episode-list.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
-import { LocationDetailComponent } from './location-detail/location-detail.component';
-import { EpisodeDetailComponent } from './episode-detail/episode-detail.component';
 import { HomeComponent } from './home/home.component';
 import { ApiRestService } from './api-rest.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -25,8 +23,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     LocationListComponent,
     EpisodeListComponent,
     CharacterDetailComponent,
-    LocationDetailComponent,
-    EpisodeDetailComponent,
     HomeComponent
   ],
   imports: [

@@ -10,9 +10,9 @@ export class ApiRestService {
 
   public getCharacterList(url?:string) {
     if(url){
-      return this.http.get<getList>(url);
+      return this.http.get<getListCharacter>(url);
     }else{
-      return this.http.get<getList>('https://rickandmortyapi.com/api/character');
+      return this.http.get<getListCharacter>('https://rickandmortyapi.com/api/character');
     }
   }
 
@@ -21,13 +21,49 @@ export class ApiRestService {
   }
 
   public searchCharacter(param?: string) {
-    return this.http.get<getList>('https://rickandmortyapi.com/api/character/?'+param);
+    return this.http.get<getListCharacter>('https://rickandmortyapi.com/api/character/?'+param);
+  }
+
+  public getLocationList(url?:string) {
+    if(url){
+      return this.http.get<getListLocation>(url);
+    }else{
+      return this.http.get<getListLocation>('https://rickandmortyapi.com/api/location');
+    }
+  }
+
+  public getEpisodeList(url?:string) {
+    if(url){
+      return this.http.get<getListEpisode>(url);
+    }else{
+      return this.http.get<getListEpisode>('https://rickandmortyapi.com/api/episode');
+    }
   }
 
 }
 
-interface getList {
+interface getListCharacter {
   results: character[];
+  info: {
+    count: number;
+    next?: string;
+    pages: number;
+    prev?: string;
+  };
+}
+
+interface getListLocation {
+  results: location[];
+  info: {
+    count: number;
+    next?: string;
+    pages: number;
+    prev?: string;
+  };
+}
+
+interface getListEpisode {
+  results: episode[];
   info: {
     count: number;
     next?: string;
@@ -53,6 +89,26 @@ export interface character {
   };
   image: string;
   episode: string[];
+  url: string;
+  created: Date;
+}
+
+export interface location {
+  id: number;
+  name: string;
+  type: string;
+  dimension: string;
+  residents: string[];
+  url: string;
+  created: Date;
+}
+
+export interface episode {
+  id: number;
+  name: string;
+  air_date: string;
+  episode: string;
+  characters: string[];
   url: string;
   created: Date;
 }
