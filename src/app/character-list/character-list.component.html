@@ -1,6 +1,33 @@
 <div class="container mt-5 posRel">
+    <div class="mb-5 row g-3">
+        <div class="col-md-6">
+            <input class="form-control" type="text" placeholder="Name" [(ngModel)]="nameSearch" (ngModelChange)="this.nameSearchChanged.next($event)"/>
+        </div>
+        <div class="col-md-3">
+            <select class="form-select" [(ngModel)]="genderSearch" (change)="searchCharacter()">
+                <option value="">Select Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="genderless">Genderless</option>
+                <option value="unknown">Unknown</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select class="form-select" [(ngModel)]="statusSearch" (change)="searchCharacter()">
+                <option value="">Select Status</option>
+                <option value="alive">Alive</option>
+                <option value="dead">Dead</option>
+                <option value="unknown">Unknown</option>
+            </select>
+        </div>
+    </div>
     <h2 class="container mb-5">List of Characters</h2>
-    <div class="row" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+    <div class="text-center" *ngIf="loading">
+        <div class="spinner-border text-light" style="width: 5rem; height: 5rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="row" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" *ngIf="!loading">
         <div class="col-sm-4" *ngFor="let character of characterList">
             <div class="card" [routerLink]="['/','character-detail',character.id]">
                 <img src="{{character.image}}" class="card-img-top" alt="characters">
