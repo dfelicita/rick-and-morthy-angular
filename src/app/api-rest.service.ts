@@ -20,6 +20,10 @@ export class ApiRestService {
     return this.http.get<character>('https://rickandmortyapi.com/api/character/'+id);
   }
 
+  public searchCharacter(param?: string) {
+    return this.http.get<getList>('https://rickandmortyapi.com/api/character/?'+param);
+  }
+
 }
 
 interface getList {
